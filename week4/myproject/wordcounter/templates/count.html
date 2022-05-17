@@ -1,0 +1,15 @@
+<h>당신이 입력한 텍스트는 {{count}} 단어로 구성되어 있습니다</h>
+<br>
+<br>
+<a href="{% url 'home' %}">다시하기</a>
+<br>
+<br>
+<h>입력한 텍스트 : </h>
+<br>
+{{text}}
+<br>
+<h>단어 카운트 : </h>
+{% for word, word_count in dic %}
+<br>
+{{ word }} - {{ word_count }}
+{% endfor %}

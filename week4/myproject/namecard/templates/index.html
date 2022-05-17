@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+
+  <body style="margin: 0px">
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+      "
+    >
+
+      <div
+        style="
+          width: 1920px;
+          height: 1080px;
+          background-color: rgb(176,222,228,1);
+          transform: scale(0.2, 0.2);
+        "
+      >
+        <img
+          src="{% static 'images/gom.jpeg' %}"
+          width="580px"
+          height="580px"
+          style="top: 200px; left: 115px;"
+        />
+        <div
+          style="
+            top: 175px;
+            left: 823px;
+            width: 12px;
+            height: 752px;
+            background: white 0% 0% no-repeat padding-box;
+          "
+        ></div>
+        <div
+          style="
+            top: 255px;
+            left: 975px;
+            width: 584px;
+            height: 73px;
+            text-align: left;
+            font: bold normal normal 70px/50px Beirut;
+            letter-spacing: 8.4px;
+            color: #000000;
+          "
+        >
+          LEE HA NUEL
+        </div>
+
+        <div class="subtext" style="top: 365px">
+          Hanyang Univ [ Information System ]
+        </div>
+        <div class="subtext" style="top: 500px">
+          LikeLion 10th / Backend
+        </div>
+        <div class="subtext" style="top: 600px">
+          Tech Stack : C, C++
+        </div>
+        <div class="subtext" style="top: 700px">
+          Contact : ezzeezz@naver.com
+        </div>
+
+        <img 
+          class="sns-img"
+          src="{% static 'images/Github.png' %}"
+          style="top:820px; left: 975px">
+        <a
+          class="url"
+          href="https://github.com/hanuel-git"
+          style="top: 825px; left: 1055px"
+          >github.com/hanuel-git</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
