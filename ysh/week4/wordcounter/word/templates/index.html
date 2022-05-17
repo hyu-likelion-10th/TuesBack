@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>단어 수 계산</title>
+</head>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<style>
+      /* #container {
+            width: 500px;
+            margin: 18% auto;
+      }
+
+      #title {
+            text-align: center;
+            font-size: 4em;
+            font-weight: bold;
+            color: #ff9514;
+            font-family: 'Caveat', cursive;
+      }
+
+      #form_cover {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 10px;
+      }
+
+      #form_title {
+            font-size: 1.5em;
+            color: #525252;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-bottom: 10px;
+      }
+      */
+      /* input {
+            width: 100px;
+            height: 100px;
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #525252;
+      } */
+      #form {
+            width: 60%;
+            height: 500px;
+            display: inline;
+            text-align: initial;
+      }
+      /*
+
+      input:focus {
+            outline: none;
+      }
+
+      #submit {
+            float: right;
+            margin-top: 10px;
+            background-color: #ff9514;
+            color: white;
+            font-family: 'Noto Sans KR', sans-serif;
+            border: none;
+            cursor: pointer;
+      } */
+</style>
+
+<body>
+      <h1>WORD COUNT</h1>
+      <form method="POST" action="">
+            {% csrf_token %}
+            
+            <a href="{% url 'about' %}" id="form_title"> ABOUT</a><br/>
+            <div>
+                  <input type="text" name="sentence" id = "form"placeholder="여기 입력하세요.">
+            </div>
+            <input type="submit" id="submit" value="count!">
+      </form>
+
+
+</body>
+
+</html>
