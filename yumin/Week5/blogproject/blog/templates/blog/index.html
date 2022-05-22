@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    안녕하세요, {{ user.username }}
+    <a href="{% url 'logout' %}">로그아웃</a>
+    {% else %}
+    아직 로그인이 되지 않았어요.
+    <a href="{% url 'login' %}">login</a>
+    {% endif %}
+    <h1>My Simple Blog</h1>
+    {% for post in posts %}
+        <a href="{% url 'detail' post.id %}"><h3>제목: {{ post.title }}</h3></a>
+        <h4>날짜: {{ post.date }}</h4>
+        내용: {{ post.body }}
+    {% endfor %}
+    <br/><br/>
+    <a href="{% url 'new' %}">HTML을 이용한 새 글 작성</a><br/>
+    <a href="{% url 'formcreate' %}">Django form을 이용한 새 글 작성</a><br/>
+    <a href="{% url 'modelformcreate' %}">Django model form을 이용한 새 글 작성</a>
+</body>
+</html>
