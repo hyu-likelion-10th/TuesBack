@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>유민이의 survey</h1>
+    <form method="post" action="save_survey">
+        {% csrf_token %}
+        {% for survey in surveys %}
+        {{survey.question}}<br/>
+        <input type="radio" name="choice" value={{survey.ans1}}>{{survey.ans1}}</input><br/>
+        <input type="radio" name="choice" value={{survey.ans2}}>{{survey.ans2}}</input><br/>
+        <input type="radio" name="choice" value={{survey.ans3}}>{{survey.ans3}}</input><br/>
+        <input type="radio" name="choice" value={{survey.ans4}}>{{survey.ans4}}</input><br/>
+        <input type="submit" value="투표"></input>
+        {% endfor %}
+        <a href={% url 'result' %}>결과확인</a>
+    </form>
+</body>
+</html>
