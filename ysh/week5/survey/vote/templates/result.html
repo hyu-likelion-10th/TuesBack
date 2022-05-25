@@ -1,0 +1,11 @@
+
+<h2>설문 응답 결과</h2>
+{% for question_option in question_option_list %}
+    <h4>질문 : {{ question_option.question }}</h4>
+    
+    <p>응답 결과</p>
+      {% for option in question_option.option %}
+      <p>{{ option.ans }} : {{ option.answer_set.count }}</p>
+      {% endfor %}
+      <br/><br/>
+{% endfor %}

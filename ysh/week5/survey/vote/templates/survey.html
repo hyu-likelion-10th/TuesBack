@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>ys's survey</h2>
+    <form method="post" action="">
+    {% csrf_token %}
+    {% for question_option in question_option_list %}
+    <h2>{{ question_option.question }}</h2>
+      {% for option in question_option.option %}
+      <p><input type="radio" name="{{question_option.question}}" value={{ option.ans }} >{{ option.ans }}</p>
+      {% endfor %}
+      <input type="button" value="추가" onclick="location.href='/add/{{question_option.question}}'" /><br/>
+    {% endfor %}
+      <br/><input type="submit" value="제출" />
+      <input type="button" value="결과확인" onclick="location.href='/result'" />
+      <input type="button" value="질문추가" onclick="location.href='/question'" />
+    </form>
+  </body>
+</html>

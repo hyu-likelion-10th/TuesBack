@@ -1,0 +1,11 @@
+<form action="", method="post">
+    {% csrf_token %}
+      <div>
+            <label for="title">질문을 입력하세요</label><br>
+            <input type="text" name="title" id="title"><br>
+
+            <label for="title">응답</label><br>
+            <input type="text" name="option"><br>
+      </div>
+      <input type="submit" value="추가">
+</form>
