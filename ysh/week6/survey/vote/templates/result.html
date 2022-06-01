@@ -1,0 +1,30 @@
+
+<h2>설문 응답 결과</h2>
+<h4>질문 : {{ survey.question }}</h4>
+
+<p>응답 결과</p>
+    <table border="1">
+	<th>문항</th>
+	<th>응답수</th>
+	<tr>
+	    <td>{{ survey.opt1 }}</td>
+	    <td>{{ answer_list.0 }}</td>
+	</tr>
+	<tr>
+	    <td>{{ survey.opt2 }}</td>
+        <td>{{ answer_list.1 }}</td>
+
+	</tr>
+	<tr>
+	    <td>{{ survey.opt3 }}</td>
+	    <td>{{ answer_list.2 }}</td>
+        
+	</tr>
+	<tr>
+	    <td>{{ survey.opt4 }}</td>
+        <td>{{ answer_list.3 }}</td>
+
+	</tr>
+    </table>
+    <a href="/">홈으로</a>
+    <br/><br/>  

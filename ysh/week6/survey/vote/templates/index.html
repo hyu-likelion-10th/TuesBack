@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ys's survey</h1>
+
+    {% if user.is_authenticated %}
+    <a href="{% url 'new' %}">설문 문항 추가하기</a>
+    <a href="{% url 'logout' %}">로그아웃</a>
+    {% else %}
+    <a href="{% url 'login' %}">로그인</a>
+    {% endif %}
+
+    {% for survey in survey_list %}
+    
+    <form method="post" action="{% url 'save' survey.id %}">
+    {% csrf_token %}
+    <h2>문항번호 {{ forloop.counter }}. {{ survey.question }}</h2>
+      <p><input type="radio" name="{{survey.id}}" value={{ survey.opt1 }} >{{ survey.opt1 }}</p>
+      <p><input type="radio" name="{{survey.id}}" value={{ survey.opt2 }} >{{ survey.opt2 }}</p>
+      <p><input type="radio" name="{{survey.id}}" value={{ survey.opt3 }} >{{ survey.opt3 }}</p>
+      <p><input type="radio" name="{{survey.id}}" value={{ survey.opt4 }} >{{ survey.opt4 }}</p>
+      <input type="submit" value="투표하기" />
+      <input type="button" value="결과확인" onclick="location.href='/result/{{survey.id}}'" />
+    </form>
+    {% endfor %}
+    <br/>
+  </body>
+</html>
